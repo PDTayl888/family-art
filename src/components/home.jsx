@@ -4,7 +4,7 @@ import Image from './image';
 import NavBar from './navBar';
 import images from '../services/imagesService';
 
-const publicPath = process.env.PUBLIC_URL + '/assets/images/';
+// const publicPath = process.env.PUBLIC_URL + '/assets/images/';
 
 class Home extends Component {
   state = {
@@ -13,7 +13,6 @@ class Home extends Component {
 
   componentDidMount() {
     console.log('didMOunt');
-    console.log(images[0].url);
     this.setState({ imageArray: images });
   }
 
@@ -23,7 +22,7 @@ class Home extends Component {
         <NavBar></NavBar>
         <MainGallery>
           {this.state.imageArray.map(item => (
-            <Image key='item._id' url={item.url}></Image>
+            <Image key='item._id' item={item} url={item.url}></Image>
           ))}
         </MainGallery>
       </div>
