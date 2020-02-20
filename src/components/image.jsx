@@ -1,13 +1,11 @@
 import React from 'react';
 
-// const publicPath = process.env.PUBLIC_URL + '/assets/images/';
-
-const Image = ({ url, item }) => {
+const Image = ({ url, item, id }) => {
   console.log(url);
   console.log(item.url);
   return (
     <div>
-      <img src={url} alt='FAILED TO LOAD'></img>
+      <img key={id} item={item} src={url} alt={id}></img>
     </div>
   );
 };

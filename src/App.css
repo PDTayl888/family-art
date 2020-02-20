@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+img {
+  object-fit: stretch;
+  height: 200px;
+  width: 400px;
+  border-radius: 6px;
+  /* object-position: 150px 0; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
