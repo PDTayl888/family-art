@@ -2,10 +2,15 @@
   text-align: center;
 }
 
+.navbar {
+  background-image: url(`${process.env.PUBLIC_URL}/images/head_band.jpg`);
+  border-bottom: red 2px dotted;
+}
+
 img {
   object-fit: stretch;
-  height: 200px;
-  width: 400px;
+  height: 325px;
+  width: 550px;
   border-radius: 6px;
   /* object-position: 150px 0; */
 }
