@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MainGallery = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className='gallery-container'>{children}</div>;
 };
 
 export default MainGallery;

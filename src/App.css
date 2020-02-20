@@ -2,17 +2,28 @@
   text-align: center;
 }
 
-.navbar {
-  background-image: url(`${process.env.PUBLIC_URL}/images/head_band.jpg`);
-  border-bottom: red 2px dotted;
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  border: 2px yellow solid;
+  margin: 5px;
 }
 
 img {
   object-fit: stretch;
-  height: 325px;
-  width: 550px;
+  height: 225px;
+  width: 370px;
   border-radius: 6px;
   /* object-position: 150px 0; */
+}
+
+.navbar {
+  background-image: url(`${process.env.PUBLIC_URL}/images/head_band.jpg`);
+  border-bottom: red 2px dotted;
+  color: white;
 }
 
 .App-logo {

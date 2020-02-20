@@ -5,7 +5,7 @@ const Image = ({ url, item, id }) => {
   console.log(item.url);
   return (
     <div>
-      <img key={id} item={item} src={url} alt={id}></img>
+      <img className='image' key={id} item={item} src={url} alt={id}></img>
     </div>
   );
 };
