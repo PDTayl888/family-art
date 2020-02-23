@@ -3,9 +3,6 @@ import MainGallery from './mainGallery';
 import Image from './image';
 import NavBar from './navBar';
 import getImages from '../services/imagesService';
-import ResizeImage from 'react-resize-image';
-
-import S3 from 'aws-sdk/clients/s3';
 
 // const publicPath = process.env.PUBLIC_URL + '/assets/images/';
 
@@ -15,7 +12,6 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    console.log('didMOunt');
     this.setState({ imageArray: getImages() });
   }
 

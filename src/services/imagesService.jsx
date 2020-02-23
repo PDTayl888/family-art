@@ -9,7 +9,7 @@ const images = [
   },
   {
     _id: '100',
-    url: `${process.env.PUBLIC_URL}/images/emo.jpg`
+    url: `${process.env.PUBLIC_URL}/logo192.png`
   },
   {
     _id: '100',

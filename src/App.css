@@ -14,8 +14,8 @@
 
 img {
   object-fit: stretch;
-  height: 225px;
-  width: 370px;
+  height: 375px;
+  width: 225px;
   border-radius: 6px;
   /* object-position: 150px 0; */
 }
