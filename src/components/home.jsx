@@ -5,6 +5,10 @@ import NavBar from './navBar';
 import getImages from '../services/imagesService';
 import firebase from '../firebase.js';
 
+const storage = firebase.storage();
+const gsReference_awesome = storage.refFromURL(
+  'gs://family-gallery-d94d4.appspot.com/'
+);
 const db = firebase.database();
 const dbRef = db.ref();
 
@@ -12,6 +16,23 @@ class Home extends Component {
   state = {
     imageArray: []
   };
+
+  setImage() {
+    console.log('setImage called now');
+    gsReference_awesome
+      .child('Asher/emo.jpg')
+      .getDownloadURL()
+      .then(function(url) {
+        console.log('image promise called');
+        console.log(url);
+        // var img = document.getElementById('myimg');
+        // img.src = url;
+      })
+      .catch(function(error) {
+        // Handle any errors
+        console.log(error);
+      });
+  }
 
   setDb() {
     console.log('setDb called');
@@ -49,12 +70,13 @@ class Home extends Component {
   // }
 
   componentDidMount() {
+    this.setImage();
     this.setDb();
     this.setState({ imageArray: getImages() });
   }
 
   render() {
-    console.log(this.state.imageArray);
+    // console.log(this.state.imageArray);
     return (
       <div>
         <NavBar></NavBar>
