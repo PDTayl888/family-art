@@ -14,7 +14,8 @@ const dbRef = db.ref();
 
 class Home extends Component {
   state = {
-    imageArray: []
+    imageArray: [],
+    url: ''
   };
 
   setImage() {
@@ -22,14 +23,11 @@ class Home extends Component {
     gsReference_awesome
       .child('Asher/emo.jpg')
       .getDownloadURL()
-      .then(function(url) {
+      .then(url => {
+        this.setState({ url });
         console.log('image promise called');
-        console.log(url);
-        // var img = document.getElementById('myimg');
-        // img.src = url;
       })
       .catch(function(error) {
-        // Handle any errors
         console.log(error);
       });
   }
@@ -71,20 +69,21 @@ class Home extends Component {
 
   componentDidMount() {
     this.setImage();
-    this.setDb();
+    // this.setDb();
     this.setState({ imageArray: getImages() });
   }
 
   render() {
-    // console.log(this.state.imageArray);
+    console.log(this.state.url);
     return (
       <div>
         <NavBar></NavBar>
-        <MainGallery>
+        <Image url={`${this.state.url}`} alt={'fart'} />
+        {/* <MainGallery>
           {this.state.imageArray.map(item => (
-            <Image url={item.url} item={item} id={item._id} />
+            <Image url={this.state.url} item={item} id={item._id} />
           ))}
-        </MainGallery>
+        </MainGallery> */}
         {/* <img
           alt={'fart'}
           src={process.env.PUBLIC_URL + '/images/naruto.jpg'}

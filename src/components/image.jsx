@@ -21,13 +21,7 @@ const Image = ({ url, item, id }) => {
   // console.log(item.url);
   return (
     <div>
-      <img
-        className='image'
-        key={id}
-        item={item}
-        src={imageUrls[0]}
-        alt={id}
-      ></img>
+      <img className='image' key={id} item={item} src={url} alt={id}></img>
     </div>
   );
 };
