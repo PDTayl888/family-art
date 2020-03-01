@@ -1,15 +1,36 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
-const navStyle = {
-  backgroundImage: `url(${process.env.PUBLIC_URL}/images/head_band.jpg)`,
-  color: 'white'
-};
+// const navStyle = {
+//   backgroundImage: `url(${process.env.PUBLIC_URL}/images/head_band.jpg)`,
+//   color: 'white'
+// };
 
 const NavBar = () => {
   return (
-    <div style={navStyle}>
-      <h1>NAVBAR</h1>
-    </div>
+    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+      <button
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarNavAltMarkup'
+        aria-controls='navbarNavAltMarkup'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
+      >
+        <span className='navbar-toggler-icon'></span>
+      </button>
+      <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
+        <div className='navbar-nav'>
+          <NavLink className='nav-item nav-link' to='/asher'>
+            Asher's Gallery
+          </NavLink>
+          <NavLink className='nav-item nav-link' to='/ellie'>
+            Ellie's Gallery
+          </NavLink>
+        </div>
+      </div>
+    </nav>
   );
 };
 
