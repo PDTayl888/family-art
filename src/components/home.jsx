@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import { Route, Redirect, Switch } from 'react-router-dom';
 
 class Home extends Component {
   render() {

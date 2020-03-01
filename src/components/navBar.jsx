@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // const navStyle = {
 //   backgroundImage: `url(${process.env.PUBLIC_URL}/images/head_band.jpg)`,
