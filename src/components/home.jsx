@@ -2,39 +2,59 @@ import React, { Component } from 'react';
 import MainGallery from './mainGallery';
 import Image from './image';
 import NavBar from './navBar';
-import getImages from '../services/imagesService';
+// import getImages from '../services/imagesService';
 import firebase from '../firebase.js';
 
 const storage = firebase.storage();
-const gsReference_awesome = storage.refFromURL(
-  'gs://family-gallery-d94d4.appspot.com/'
-);
+// const gsReference_awesome = storage.refFromURL(
+//   'gs://family-gallery-d94d4.appspot.com/'
+// );
 const db = firebase.database();
-const dbRef = db.ref();
+const dbRef = db.ref().child('images');
 
 class Home extends Component {
   state = {
-    imageArray: [],
-    url: ''
+    imageArray: [
+      'awesome.jpg',
+      'emo.jpg',
+      'head_band.jpg',
+      'naruto.jpg',
+      'sideways.jpg',
+      'versus.jpg'
+    ],
+    url: []
   };
 
   setImage() {
     console.log('setImage called now');
-    gsReference_awesome
-      .child('Asher/emo.jpg')
-      .getDownloadURL()
-      .then(url => {
-        this.setState({ url });
-        console.log('image promise called');
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    this.state.imageArray.forEach(item => {
+      storage
+        .ref(`Asher/`)
+        .child(`${item}`)
+        .getDownloadURL()
+        .then(url => {
+          this.setState({ url: [...this.state.url, url] });
+          console.log('image promise called');
+          console.log(this.state.url);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    });
   }
 
   setDb() {
     console.log('setDb called');
-    dbRef.child('url').set('gary');
+    dbRef.set('gary');
+  }
+
+  componentDidMount() {
+    // dbRef
+    //   .once('value')
+    //   .then(snapshot => this.setState({ imageArray: snapshot.val() }))
+    //   .catch(err => console.log(err));
+    this.setImage();
+    // this.setDb();
   }
 
   // saveUrlsToDb() {
@@ -67,23 +87,17 @@ class Home extends Component {
 
   // }
 
-  componentDidMount() {
-    this.setImage();
-    // this.setDb();
-    this.setState({ imageArray: getImages() });
-  }
-
   render() {
     console.log(this.state.url);
     return (
       <div>
         <NavBar></NavBar>
-        <Image url={`${this.state.url}`} alt={'fart'} />
-        {/* <MainGallery>
-          {this.state.imageArray.map(item => (
-            <Image url={this.state.url} item={item} id={item._id} />
+        {/* <Image url={this.state.url} alt={'fart'} /> */}
+        <MainGallery>
+          {this.state.url.map((item, index) => (
+            <Image url={item} id={index} key={index} />
           ))}
-        </MainGallery> */}
+        </MainGallery>
         {/* <img
           alt={'fart'}
           src={process.env.PUBLIC_URL + '/images/naruto.jpg'}
