@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Image from './image';
-import firebase from '../firebase.js';
-
-const storage = firebase.storage();
+import { storage } from '../firebase.js';
 
 class EllieGallery extends Component {
   state = {
