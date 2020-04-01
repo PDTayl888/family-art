@@ -11,6 +11,7 @@ const setImage = () => {
       .child(`${item}`)
       .getDownloadURL()
       .then(url => {
+        setImageArray();
         this.setState({ url: [...this.state.url, url] });
         console.log('image promise called');
         console.log(this.state.url);
@@ -39,9 +40,14 @@ const AsherGallery = () => {
     slide: 0
   };
 
-  useEffect(() => {
-    console.log('useEffect');
-  }, []);
+  const [imageArray, setImageArray] = useState([
+    'awesome.jpg',
+    'emo.jpg',
+    'head_band.jpg',
+    'naruto.jpg',
+    'sideways.jpg',
+    'versus.jpg'
+  ]);
 
   return (
     <>
