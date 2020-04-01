@@ -1,9 +1,31 @@
-import React, { Component } from 'react';
-import Image from './image';
+import React, { useState, useEffect } from 'react';
+// import Image from './image';
 import { storage } from '../firebase.js';
+import FsLightbox from 'fslightbox-react';
+import Image from './image';
 
-class AsherGallery extends Component {
-  state = {
+const setImage = () => {
+  this.state.imageArray.forEach(item => {
+    storage
+      .ref(`Asher/`)
+      .child(`${item}`)
+      .getDownloadURL()
+      .then(url => {
+        this.setState({ url: [...this.state.url, url] });
+        console.log('image promise called');
+        console.log(this.state.url);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
+};
+
+const AsherGallery = () => {
+  const [toggler, setToggler] = useState(false);
+  useEffect(() => console.log('mounted'), []);
+
+  const state = {
     imageArray: [
       'awesome.jpg',
       'emo.jpg',
@@ -12,40 +34,33 @@ class AsherGallery extends Component {
       'sideways.jpg',
       'versus.jpg'
     ],
-    url: []
+    url: [],
+    isVisible: false,
+    slide: 0
   };
 
-  setImage() {
-    console.log('setImage called now');
-    this.state.imageArray.forEach(item => {
-      storage
-        .ref(`Asher/`)
-        .child(`${item}`)
-        .getDownloadURL()
-        .then(url => {
-          this.setState({ url: [...this.state.url, url] });
-          console.log('image promise called');
-          console.log(this.state.url);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    });
-  }
+  useEffect(() => {
+    console.log('useEffect');
+  }, []);
 
-  componentDidMount() {
-    this.setImage();
-  }
-
-  render() {
-    return (
-      <div className='gallery-container'>
+  return (
+    <>
+      <button onClick={() => setToggler(!toggler)}>Toggle Lightbox</button>
+      <FsLightbox
+        toggler={toggler}
+        sources={[
+          'https://i.imgur.com/fsyrScY.jpg',
+          'https://www.youtube.com/watch?v=xshEZzpS4CQ',
+          'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+        ]}
+      />
+      <div>
         {this.state.url.map((item, index) => (
-          <Image url={item} id={index} key={index} />
+          <Image id={index} urls={item} showSlide={this.handleShowSlide} />
         ))}
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default AsherGallery;

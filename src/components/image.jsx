@@ -1,15 +1,19 @@
 import React from 'react';
-import { SRLWrapper } from 'simple-react-lightbox';
 
-const Image = ({ url, id }) => {
-  console.log(id);
-  // console.log(item.url);
+const Image = ({ urls, id, showSlide }) => {
+  console.log(id, 'INDEX $$$$$$$');
   return (
-    <SRLWrapper>
-      <div>
-        <img className='image' key={id} src={url} alt={id}></img>
-      </div>
-    </SRLWrapper>
+    <div>
+      <img
+        onClick={() => {
+          showSlide(id);
+        }}
+        className='image'
+        key={id}
+        src={urls}
+        alt={id}
+      ></img>
+    </div>
   );
 };
 
