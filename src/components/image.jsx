@@ -1,12 +1,7 @@
 import React from 'react';
 
 const Image = ({ id, src }) => {
-  return (
-    <div>
-      {console.log('FART', src)}
-      <img className='image zoom' key={id} src={src} alt={id}></img>
-    </div>
-  );
+  return <img className='zoom' key={id} src={src} alt={id}></img>;
 };
 
 export default Image;

@@ -15,17 +15,13 @@ const AsherGallery = () => {
   ]);
 
   useEffect(() => {
-    console.log('IMAGE ARRAY', imageArray);
     imageArray.forEach((item) => {
       storage
         .ref(`Asher/`)
         .child(`${item}`)
         .getDownloadURL()
         .then((fireUrl) => {
-          console.log('FIRE URL: ', fireUrl);
           setUrl((currentState) => [...currentState, fireUrl]);
-          console.log('image promise called');
-          console.log('useEffect URL: ', url);
         })
         .catch(function (error) {
           console.log(error);
@@ -35,9 +31,11 @@ const AsherGallery = () => {
 
   return (
     <div className='gallery-container'>
-      {console.log(url)}
       {url.map((item, index) => (
-        <Image id={index} src={item} />
+        <div className='image'>
+          {' '}
+          <Image id={index} src={item} />
+        </div>
       ))}
     </div>
   );
