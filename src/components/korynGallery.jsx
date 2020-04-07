@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Image from './image';
 import { storage } from '../firebase.js';
 
-const EllieGallery = () => {
+const KorynGallery = () => {
   const [url, setUrl] = useState([]);
 
-  const [imageArray] = useState(['ellie_bear.jpg', 'ellie_reggae.jpg']);
+  const [imageArray] = useState(['k_sal.jpg']);
 
   useEffect(() => {
     imageArray.forEach((item) => {
       storage
-        .ref(`Ellie/`)
+        .ref(`Koryn/`)
         .child(`${item}`)
         .getDownloadURL()
         .then((fireUrl) => {
@@ -35,4 +35,4 @@ const EllieGallery = () => {
   );
 };
 
-export default EllieGallery;
+export default KorynGallery;

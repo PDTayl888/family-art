@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 // import { storage } from './firebase.js';
 import AsherGallery from './components/asherGallery';
+import KorynGallery from './components/korynGallery';
 import EllieGallery from './components/ellieGallery';
 import NotFound from './components/notFound';
 // import { firebase } from 'firebase/app';
@@ -20,6 +21,7 @@ function App() {
           <Switch>
             <Route path='/asher' component={AsherGallery} />
             <Route path='/ellie' component={EllieGallery} />
+            <Route path='/koryn' component={KorynGallery} />
             <Route path='/home' component={Home} />
             <Route path='/not-found' component={NotFound} />
             {/* <Redirect from='/' exact to='/home' />

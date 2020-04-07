@@ -1,15 +1,16 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .zoom {
-  padding: 20px;
+  /* padding: 10px; */
   transition: transform 0.2s; /* Animation */
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
-  border: 2px greenyellow solid;
-  border-radius: 4px;
+  border: 2px rgb(70, 70, 158) solid;
+  border-radius: 1px;
 }
 
 .zoom:hover {
@@ -19,26 +20,25 @@
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 30px;
+  /* border: 3px yellow dotted; */
+  margin-right: 30px;
+  height: 100%;
+  background-color: #282c34;
+
+  /* position: relative; */
 }
 
 .image {
-  border: 2px yellow solid;
+  border: 4px rgb(70, 70, 158) solid;
+  border-radius: 8px;
   margin: 65px;
 }
 
-img {
-  border-radius: 4px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  /* object-position: 150px 0; */
-}
-
 .navbar {
-  background-image: url(`${process.env.PUBLIC_URL}/images/head_band.jpg`);
-  border-bottom: red 2px dotted;
-  color: white;
+  background-color: #363b46;
+  /* border-bottom: red 2px dotted; */
+  color: rgb(107, 29, 29);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -47,7 +47,7 @@ img {
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -56,11 +56,11 @@ img {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
