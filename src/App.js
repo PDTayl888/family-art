@@ -10,7 +10,7 @@ import KorynGallery from './components/korynGallery';
 import EllieGallery from './components/ellieGallery';
 import NotFound from './components/notFound';
 // import { firebase } from 'firebase/app';
-
+// test now
 function App() {
   return (
     <React.Fragment>
