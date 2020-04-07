@@ -1,18 +1,10 @@
 import React from 'react';
 
-const Image = ({ urls, id, showSlide }) => {
-  console.log(id, 'INDEX $$$$$$$');
+const Image = ({ id, src }) => {
   return (
     <div>
-      <img
-        onClick={() => {
-          showSlide(id);
-        }}
-        className='image'
-        key={id}
-        src={urls}
-        alt={id}
-      ></img>
+      {console.log('FART', src)}
+      <img className='image zoom' key={id} src={src} alt={id}></img>
     </div>
   );
 };

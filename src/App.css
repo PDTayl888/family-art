@@ -17,6 +17,8 @@ img {
   height: 375px;
   width: 225px;
   border-radius: 6px;
+  border: 2px yellow solid;
+
   /* object-position: 150px 0; */
 }
 
@@ -24,11 +26,6 @@ img {
   background-image: url(`${process.env.PUBLIC_URL}/images/head_band.jpg`);
   border-bottom: red 2px dotted;
   color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -59,4 +56,16 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.zoom {
+  padding: 50px;
+  transition: transform 0.2s; /* Animation */
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2.5);
 }
