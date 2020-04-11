@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/family-art/static/css/main.42af080d.chunk.css",
+    "main.js": "/family-art/static/js/main.468d98d8.chunk.js",
+    "main.js.map": "/family-art/static/js/main.468d98d8.chunk.js.map",
+    "runtime-main.js": "/family-art/static/js/runtime-main.acc3e1ee.js",
+    "runtime-main.js.map": "/family-art/static/js/runtime-main.acc3e1ee.js.map",
+    "static/css/2.64a99b10.chunk.css": "/family-art/static/css/2.64a99b10.chunk.css",
+    "static/js/2.9950cbc9.chunk.js": "/family-art/static/js/2.9950cbc9.chunk.js",
+    "static/js/2.9950cbc9.chunk.js.map": "/family-art/static/js/2.9950cbc9.chunk.js.map",
+    "index.html": "/family-art/index.html",
+    "precache-manifest.a886b7f4da8d8f52e809a69aee8ddf85.js": "/family-art/precache-manifest.a886b7f4da8d8f52e809a69aee8ddf85.js",
+    "service-worker.js": "/family-art/service-worker.js",
+    "static/css/2.64a99b10.chunk.css.map": "/family-art/static/css/2.64a99b10.chunk.css.map",
+    "static/css/main.42af080d.chunk.css.map": "/family-art/static/css/main.42af080d.chunk.css.map",
+    "static/js/2.9950cbc9.chunk.js.LICENSE.txt": "/family-art/static/js/2.9950cbc9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.acc3e1ee.js",
+    "static/css/2.64a99b10.chunk.css",
+    "static/js/2.9950cbc9.chunk.js",
+    "static/css/main.42af080d.chunk.css",
+    "static/js/main.468d98d8.chunk.js"
+  ]
+}
