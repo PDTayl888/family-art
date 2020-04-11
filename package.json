@@ -1,4 +1,5 @@
 {
+  "homepage": "http://PDTayl888.github.io/family-art",
   "name": "asher-art",
   "version": "0.1.0",
   "private": true,
@@ -9,12 +10,15 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
     "firebase": "^7.9.0",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
