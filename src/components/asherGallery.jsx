@@ -6,6 +6,7 @@ const AsherGallery = () => {
   const [url, setUrl] = useState([]);
 
   const [imageArray] = useState([
+    'Ash_creepy.jpg',
     'awesome.jpg',
     'emo.jpg',
     'head_band.jpg',
